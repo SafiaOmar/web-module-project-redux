@@ -21,5 +21,11 @@ const FavoriteMovieList = (props) => {
     </div>);
 }
 
+const mapStateToProps = (state) => {
+    return{
+        favorites: state.favoriteReducer.favorites
+    }
+}
 
-export default FavoriteMovieList;
+
+export default connect(mapStateAsProps, { removeFavorites })(FavoriteMovieList);
